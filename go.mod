@@ -1,4 +1,4 @@
-module github.com/gan-of-culture/get-sauce
+module github.com/GameRight101/get-sauce
 
 go 1.22
 
