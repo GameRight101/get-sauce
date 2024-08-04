@@ -153,6 +153,11 @@ func extractData(URL string) (*static.Data, error) {
 	if res.Resolution == "1080p" {
 		videoSources = append(videoSources, videoSourceBaseURL+"/av1.1080p.webm")
 	}
+	
+	// Add support for 1080i resolution
+	if res.Resolution == "1080i" {
+    	videoSources = append(videoSources, videoSourceBaseURL+"/av1.1080i.mp4")
+	}
 
 	if res.Resolution == "4k" {
 		videoSources = append(videoSources, videoSourceBaseURL+"/av1.1080p.webm")
@@ -163,6 +168,7 @@ func extractData(URL string) (*static.Data, error) {
 		videoSources = append(videoSources, []string{
 			videoSourceBaseURL + "/720/manifest.mpd",
 			videoSourceBaseURL + "/1080/manifest.mpd",
+			videoSourceBaseURL + "/1080i/manifest.mpd",
 			videoSourceBaseURL + "/2160/manifest.mpd",
 		}...)
 	}
